@@ -1,0 +1,48 @@
+<h1>Edit Client: <%= @client.name %></h1>
+
+<%= form_for(@client) do |f| %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+  	<%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+  	<%= f.label :age %><br/>
+    <%= f.text_field :age %>
+  </p>
+  <p>
+  	<%= f.label :gender %><br/>
+    <%= f.text_field :gender %>
+  </p>
+  <p>
+  	<%= f.label :email %><br/>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+  	<%= f.label :phone_number %><br/>
+    <%= f.text_field :phone_number %>
+  </p>
+  <p>
+  	<%= f.label :first_session %><br/>
+  	<%= f.datetime_select :first_session, :ampm => true, :minute_step => 15 %>
+  </p>
+  <p>
+  	<%= f.label :last_session %><br/>
+  	<%= f.datetime_select :last_session, :ampm => true, :minute_step => 15 %>
+  </p>
+  <p>
+  	<%= f.label :next_session %><br/>
+  	<%= f.datetime_select :next_session, :ampm => true, :minute_step => 15 %>
+  </p>
+  <p>
+  	<%= f.label :final_session %><br/>
+  	<%= f.datetime_select :final_session, :ampm => true, :minute_step => 15 %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

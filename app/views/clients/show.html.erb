@@ -1,0 +1,41 @@
+
+<div>
+  <h1><%= @client.first_name.capitalize %> <%= @client.last_name.capitalize %></h1>
+  <table>
+  	<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Age</th>
+			<th>Gender</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+    </tr>
+    <tr>
+			<td><%= @client.first_name %></td>
+			<td><%= @client.last_name %></td>
+			<td><%= @client.age %></td>
+			<td><%= @client.gender %></td>
+			<td><%= @client.email %></td>
+			<td><%= @client.phone_number %></td>
+		</tr>
+  </table>
+  <h1>Session Information</h1>
+  	<table>
+  	<tr>
+      <th>First Session</th>
+      <th>Last Session</th>
+      <th>Next Session</th>
+      <th>Final Session</th>
+    </tr>
+    <tr>
+    	<td><%= @client.first_session %></td>
+    	<td><%= @client.last_session %></td>
+    	<td><%= @client.next_session %></td>
+    	<td><%= @client.final_session %></td>
+    </tr>
+   </table>
+<nav>
+  <%= link_to "All Clients", clients_path %> |
+  <%= link_to "Edit", edit_client_path(@client) %>
+</nav>
+</div>
