@@ -21,21 +21,12 @@
   </table>
   <h1>Session Information</h1>
   	<table>
-  	<tr>
-      <th>First Session</th>
-      <th>Last Session</th>
-      <th>Next Session</th>
-      <th>Final Session</th>
-    </tr>
-    <tr>
-    	<td><%= @client.first_session %></td>
-    	<td><%= @client.last_session %></td>
-    	<td><%= @client.next_session %></td>
-    	<td><%= @client.final_session %></td>
-    </tr>
+
    </table>
 <nav>
   <%= link_to "All Clients", clients_path %> |
   <%= link_to "Edit", edit_client_path(@client) %>
+  <%= link_to "Delete", client_path(@client), method: :delete, data: { confirm: 'Are you sure?' } %>
 </nav>
 </div>
+<%= render 'footer' %>

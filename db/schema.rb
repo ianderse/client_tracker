@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925211012) do
+ActiveRecord::Schema.define(version: 20140926204955) do
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
@@ -20,12 +20,16 @@ ActiveRecord::Schema.define(version: 20140925211012) do
     t.string   "phone_number"
     t.integer  "age"
     t.string   "gender"
-    t.datetime "first_session"
-    t.datetime "last_session"
-    t.datetime "next_session"
-    t.datetime "final_session"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "sessions", force: true do |t|
+    t.datetime "date_time"
+    t.integer  "client_id"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

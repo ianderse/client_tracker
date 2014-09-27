@@ -13,9 +13,30 @@ class ClientsController < ApplicationController
 
 	def update
 		@client = Client.find(params[:id])
-		client_params = params.require(:client).permit(:first_name, :last_name, :age, :gender, :email, :phone_number, :first_session, :last_session, :final_session, :next_session)
 		@client.update(client_params)
 		redirect_to @client
 	end
+
+	def new
+		@client = Client.new
+	end
+
+	def create
+		@client = Client.new(client_params)
+		@client.save
+		redirect_to @client
+	end
+
+	def destroy
+		@client = Client.find(params[:id])
+		@client.destroy
+		redirect_to clients_url
+	end
+
+	private
+
+	def client_params
+      params.require(:client).permit(:first_name, :last_name, :age, :gender, :email, :phone_number)
+   end
 
 end
