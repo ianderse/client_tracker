@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
 	def index
-		@clients = Client.all
+		@clients = Client.order(params[:sort])
 	end
 
 	def show
@@ -36,7 +36,7 @@ class ClientsController < ApplicationController
 	private
 
 	def client_params
-      params.require(:client).permit(:first_name, :last_name, :age, :gender, :email, :phone_number)
+      params.require(:client).permit(:first_name, :last_name, :age, :gender, :email, :phone_number, :open_client)
    end
 
 end

@@ -2,12 +2,13 @@
 
 <table>
 	<tr>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Age</th>
-		<th>Gender</th>
-		<th>Email</th>
-		<th>Phone Number</th>
+		<th><%= link_to "First Name", :sort => "first_name" %></th>
+		<th><%= link_to "Last Name",  :sort => "last_name" %></th>
+		<th><%= link_to "Age",        :sort => "age" %></th>
+		<th><%= link_to "Gender",     :sort => "gender" %></th>
+		<th><%= link_to "Email",      :sort => "email" %></th>
+		<th><%= link_to "Phone Number", :sort => "phone_number" %></th>
+		<th><%= link_to "Current Client?", :sort => "open_client" %></th>
 		<th>Options</th>
 	</tr>
 	<% @clients.each do |client| %>
@@ -18,6 +19,7 @@
 			<td><%= client.gender %></td>
 			<td><%= client.email %></td>
 			<td><%= client.phone_number %></td>
+			<td><%= client.open_client %></td>
 			<td><%= link_to "Session Information", client_path(client) %></td>
 		</tr>
 	<% end %>

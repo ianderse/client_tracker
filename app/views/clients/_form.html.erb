@@ -23,6 +23,10 @@
   	<%= f.label :phone_number %><br/>
     <%= f.text_field :phone_number %>
   </p>
+   <p>
+    <%= f.label "Current Client?" %><br/>
+    <%= f.check_box :open_client %>
+  </p>
   <p>
     <%= f.submit %>
     <%= link_to "Cancel", clients_path %>
