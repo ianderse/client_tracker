@@ -1,0 +1,40 @@
+$primary-color: #237CBE;
+$secondary-color: #F0F0F0;
+
+header#page-header {
+  text-align: center;
+  text-transform: uppercase;
+  color: $secondary-color;
+  background: $primary-color;
+  padding: 5px;
+  border-bottom: 3px solid darken($primary-color, 10%);
+
+}
+
+footer#page-footer {
+  color: $primary-color;
+  background: $secondary-color;
+  text-align: center;
+  padding: 5px;
+  border-top: 3px solid darken($secondary-color, 10%);
+}
+
+aside#sidebar {
+  float: right;
+  background: $secondary-color;
+  width: 200px;
+}
+
+table {
+  width:100%;
+}
+th, td {
+  border: 1px solid #022835;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container {
+  width:75%;
+}

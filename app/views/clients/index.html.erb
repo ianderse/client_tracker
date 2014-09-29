@@ -1,30 +1,30 @@
 <h1><%= pluralize(@clients.size, 'Client') %></h1>
 
-<table>
-	<tr>
-		<th><%= link_to "First Name", :sort => "first_name" %></th>
-		<th><%= link_to "Last Name",  :sort => "last_name" %></th>
-		<th><%= link_to "Age",        :sort => "age" %></th>
-		<th><%= link_to "Gender",     :sort => "gender" %></th>
-		<th><%= link_to "Email",      :sort => "email" %></th>
-		<th><%= link_to "Phone Number", :sort => "phone_number" %></th>
-		<th><%= link_to "Current Client?", :sort => "open_client" %></th>
-		<th>Options</th>
-	</tr>
-	<% @clients.each do |client| %>
+<div class="container">
+	<table>
 		<tr>
-			<td><%= client.first_name %></td>
-			<td><%= client.last_name %></td>
-			<td><%= client.age %></td>
-			<td><%= client.gender %></td>
-			<td><%= client.email %></td>
-			<td><%= client.phone_number %></td>
-			<td><%= client.open_client %></td>
-			<td><%= link_to "Session Information", client_path(client) %></td>
+			<th><%= link_to "First Name", :sort => "first_name" %></th>
+			<th><%= link_to "Last Name",  :sort => "last_name" %></th>
+			<th><%= link_to "Age",        :sort => "age" %></th>
+			<th><%= link_to "Gender",     :sort => "gender" %></th>
+			<th><%= link_to "Email",      :sort => "email" %></th>
+			<th><%= link_to "Phone Number", :sort => "phone_number" %></th>
+			<th><%= link_to "Current Client?", :sort => "open_client" %></th>
+			<th>Options</th>
 		</tr>
-	<% end %>
-</table>
+		<% @clients.each do |client| %>
+			<tr>
+				<td><%= client.first_name.capitalize %></td>
+				<td><%= client.last_name.capitalize %></td>
+				<td><%= client.age %></td>
+				<td><%= client.gender.capitalize %></td>
+				<td><%= client.email %></td>
+				<td><%= client.phone_number %></td>
+				<td><%= client.open_client %></td>
+				<td><%= link_to "Sessions", client_path(client) %> | <%= link_to "Edit", edit_client_path(client) %></td>
+			</tr>
+		<% end %>
+	</table>
 
-<%= link_to "New Client", new_client_path %>
-
-<%= render 'footer' %>
+	<%= link_to "New Client", new_client_path %>
+</div>
